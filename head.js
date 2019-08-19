@@ -6,9 +6,6 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-
 const head = function(array) {
   if (array != []) {
     return array[0];
