@@ -21,19 +21,9 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 const middle = function (array) {
-  let middleOfArray = [];
-  for (x = 0; x < array.length; x++) {
+  const midIndex = Math.floor(array.length / 2)
     if (array.length <= 2) {
       return [];
-    } else if (array.length > 2 && array.length % 2 == 0) {
-      middleOfArray.push(array[((array.length / 2) - 1)]);
-      middleOfArray.push(array[array.length / 2]);
-      return middleOfArray;
-    } else if (array.length > 2 && array.length % 2 === 1) {
-      middleOfArray.push(array[Math.floor(((array.length / 2)))]);
-      return middleOfArray;
-    }
-  }
-};
-
-assertArraysEqual((middle([1, 2, 3])), [2])
+    } 
+    return array.length % 2 === 0 ? [array[midIndex -1], array [midIndex]] : [array[midIndex]];
+  };
