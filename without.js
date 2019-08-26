@@ -11,12 +11,13 @@
 
 const without = function(origArray, itemsToRemove) {
   const newArray = [];
-  for (const item1 of origArray) {
-    console.log(item1)
-      if (!itemsToRemove.includes(origArray[item1])) {
-        newArray.push(origArray[item1]);
+  for (x = 0; x < origArray.length; x++) {
+      if (!itemsToRemove.includes(origArray[x])) {
+        newArray.push(origArray[x]);
     }
   } return newArray;
 };
 
-console.log(without([1, 2, 3, 4], [2, 3]));
+console.log(without([1, 2, 3, 4, 5, 6], [2, 3, 5]));
+
+module.exports = without;
