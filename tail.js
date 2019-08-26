@@ -10,4 +10,4 @@ const tail = function(words) {
   return newArray;
 };
 
-module.exports = tail
+module.exports = tail;
