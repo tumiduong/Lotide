@@ -2,8 +2,8 @@ const assertEqual = require("./assertEqual");
 
 const findKeyByValue = function(object, value) {
   let findThisKey = "";
-  let keyOfObject = Object.keys(object)
-  for (x = 0; x < keyOfObject.length; x++) {
+  let keyOfObject = Object.keys(object);
+  for (let x = 0; x < keyOfObject.length; x++) {
     if (object[keyOfObject[x]] === value) {
       findThisKey = keyOfObject[x];
     } else {
@@ -12,7 +12,7 @@ const findKeyByValue = function(object, value) {
   } return findThisKey;
 };
 
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"

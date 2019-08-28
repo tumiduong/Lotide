@@ -8,18 +8,16 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(array1, array2) {
   let arrayEq = "";
-  console.log(array1, array2)
-if (array1.length !== array2.length) {
-  console.log("not samw")
-  return false;
-}
+  if (array1.length !== array2.length) {
+    return false;
+  }
 
   for (let i = 0; i < array1.length; i++) {
-      if (array1[i] === array2[i]) {
-        arrayEq = true;
-      } else {
-        arrayEq = false;
-      }
+    if (array1[i] === array2[i]) {
+      arrayEq = true;
+    } else {
+      arrayEq = false;
+    }
   } return arrayEq;
 };
 
@@ -29,10 +27,8 @@ const eqObjects = function(object1, object2) {
   if (keys1.length !== keys2.length) {
     return false;
   }
-
+  let equal = false;
   for (const key of keys1) {
-    let equal = false;
-    console.log((object2[key]))
     if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {
       return eqArrays(object1[key], object2[key]);
     } else if (object1[key] === object2[key]) {
@@ -41,7 +37,6 @@ const eqObjects = function(object1, object2) {
       equal = false;
     }
   } return equal;
-  
 };
 
 //const ab = { a: "1", b: "2" };
@@ -50,11 +45,11 @@ const eqObjects = function(object1, object2) {
 //
 //const abc = { a: "1", b: "2", c: "3" };
 //assertEqual(eqObjects(ab, abc), false);
+//const cd = { c: "1", d: ["2", 3] };
+//const dc = { d: ["2", 3], c: "1" };
+//assertEqual(eqObjects(cd, dc), true);
+//
+//const cd2 = { c: "1", d: ["2", 3, 4] };
+//assertEqual(eqObjects(cd, cd2), false);
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true);
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false);
-
+module.exports = eqObjects;

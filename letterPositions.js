@@ -1,10 +1,10 @@
 const letterPositions = function(sentence) {
   const results = {};
-  for (x = 0; x < sentence.length; x++) {
+  for (let x = 0; x < sentence.length; x++) {
     if (!results[sentence[x]]) {
       results[sentence[x]] = [x];
     } else if (Array.isArray(results[sentence[x]])) {
-      results[sentence[x]].push(x)
+      results[sentence[x]].push(x);
     }
   } delete results[" "];
   return results;
